@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMI-E9-CDv" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <segmentedControl contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hRk-Uu-cSY">
+                                <rect key="frame" x="30" y="564" width="540" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hRk-Uu-cSY" secondAttribute="height" multiplier="146:7" id="j2O-K1-CJj"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="setMapType:" destination="BYZ-38-t0r" eventType="valueChanged" id="h7A-a6-k1d"/>
+                                </connections>
+                            </segmentedControl>
+                            <searchBar contentMode="redraw" text="" placeholder="Search for Places" translatesAutoresizingMaskIntoConstraints="NO" id="rUb-r7-EjH">
+                                <rect key="frame" x="20" y="25" width="560" height="41.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rUb-r7-EjH" secondAttribute="height" multiplier="27:2" id="lm8-2i-wON"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pMI-E9-CDv" secondAttribute="bottom" id="5f4-Bk-2fC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pMI-E9-CDv" secondAttribute="trailing" constant="-20" id="Ddv-KC-Lj6"/>
+                            <constraint firstItem="rUb-r7-EjH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bYP-NT-ogP"/>
+                            <constraint firstItem="pMI-E9-CDv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="cpr-8s-O0R"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rUb-r7-EjH" secondAttribute="trailing" id="fst-aQ-7m7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hRk-Uu-cSY" secondAttribute="bottom" constant="10" id="j4b-lG-92c"/>
+                            <constraint firstItem="rUb-r7-EjH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="jg3-IE-42s"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hRk-Uu-cSY" secondAttribute="trailing" constant="10" id="k9H-M4-ff0"/>
+                            <constraint firstItem="hRk-Uu-cSY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="v8j-id-WJM"/>
+                            <constraint firstItem="pMI-E9-CDv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="xhv-jG-Ebt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="pMI-E9-CDv" id="Hyh-2f-SnJ"/>
+                        <outlet property="searchBar" destination="rUb-r7-EjH" id="bS4-dc-yfa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="291" y="319"/>
+        </scene>
+    </scenes>
+</document>
